@@ -8,9 +8,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        purple: {
+          500: "#8B5CF6",
+        },
+        gray: {
+          500: "#6B7280",
+          300: "#D1D5DB",
+        },
       },
+      fontFamily: {
+      sans:'Plus Jakarta Sans'
+      },
+      
     },
   },
   plugins: [],
