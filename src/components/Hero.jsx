@@ -36,16 +36,16 @@ const Hero = () => {
             {/* Background image for the right half */}
             <div className="md:absolute inset-y-0 right-0 w-1/2 bg-cover bg-center" style={{ backgroundImage: "url('/bg.png')" }}></div>
 
-            <section className='max-w-[1440px] w-full m-auto px-5 md:pl-[160px] md:pr-[60px] font-sans relative z-10'>
+            <section className='max-w-[1440px] w-full m-auto px-5 md:px-[160px] font-sans relative z-10'>
                 <div className='flex md:gap-[32px] justify-center text-center lg:text-left lg:justify-normal '>
                     <div className='max-w-[544px]'>
                         <div className='flex gap-[40px] md:gap-[32px] flex-col'>
                             <p className='font-bold leading-[44px] min-w-[300px]  md:leading-[70.4px] md:text-[64px] text-[40px] text-[#000929]'>Buy, rent, or sell your property easily</p>
                             <p className='font-normal leading-[32px] min-w-[300px] text-[20px] text-[#000929]'>A great platform to buy, sell, or even rent your properties without any commisions.</p>
 
-                            <div className='counter'>    
+                              
                             <Counter />
-                            </div>
+                          
 
                         </div>
                     </div>
@@ -81,15 +81,13 @@ const Hero = () => {
                 </div>
                 <div className='mt-[58px]'>
 
-                    <div className='box'>
+                   
                     <Motion />
                     <SearchBox />
-                    </div>
-
                     <SearchBar />
                 </div>
 
-                <div className=' hidden xl:flex absolute top-[380px] left-[1100px] border-2 border-[#7065F0] rounded-[8px]'>
+                <div className=' hidden xl:flex absolute p-[1.5px] top-[380px] left-[1100px] border-2 border-[#7065F0] rounded-2xl'>
                     {properties.slice(1).map(property => (
                         <div key={property.id} className="max-w-[310px] max-h-[280px] rounded-[8px] p-[1px] overflow-hidden shadow-lg bg-white">
                             <Image src={property.image} width={190} height={120} alt="Property" className="w-full rounded-t-2xl"></Image>

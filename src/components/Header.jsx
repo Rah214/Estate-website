@@ -32,17 +32,12 @@ const authButtons = [
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
-    useEffect(()=>{
-        if(menuOpen){
-            document.body.style.overflow = 'hidden';
-
-        }else{
-            document.body.style.overflow = 'auto';
-        }
-    },[menuOpen])
+    useEffect(() => {
+        document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
+    }, [menuOpen]);
 
     return (
-        <header className="max-w-[1440px]  mx-auto py-6 px-4 font-sans border-b-[1.5px] border-[#F0EFFB] ">
+        <header className="max-w-[1440px] mx-auto py-6 px-4 font-sans border-b-[1.5px] border-[#F0EFFB]">
             <div className="flex justify-between items-center">
                 {/* Logo */}
                 <div>
@@ -58,12 +53,12 @@ const Header = () => {
                             {label}
                             {submenu && (
                                 <svg
-                                    className="w-4 h-4 flex-shrink-0"
+                                    className="w-4 h-4 flex-shrink-0 transition-colors duration-200 hover:stroke-[#7065F0]"
                                     viewBox="0 0 12 7"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
-                                    <path d="M10.1667 1.83333L6.00004 6L1.83337 1.83333" stroke="#000248"></path>
+                                    <path d="M10.1667 1.83333L6.00004 6L1.83337 1.83333" stroke="currentColor"></path>
                                 </svg>
                             )}
                         </Link>
@@ -89,18 +84,18 @@ const Header = () => {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="md:hidden flex flex-col items-start mt-4 gap-4 bg-green-50 w-screen h-screen ">
+                <div className="md:hidden flex flex-col items-start mt-4 gap-4 bg-[#F7F7FD] w-screen h-screen">
                     {navLinks.map(({ href, label, submenu }) => (
-                        <Link key={href} href={href} onClick={() => setMenuOpen(false)} className="flex items-center gap-2 hover:text-[#7065F0]  pl-[10px] transition-colors duration-200">
+                        <Link key={href} href={href} onClick={() => setMenuOpen(false)} className="flex items-center gap-2 hover:text-[#7065F0] pl-[10px] transition-colors duration-200">
                             {label}
                             {submenu && (
                                 <svg
-                                    className="w-4 h-4 flex-shrink-0"
+                                    className="w-4 h-4 flex-shrink-0 transition-colors duration-200 hover:stroke-[#7065F0]"
                                     viewBox="0 0 12 7"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
-                                    <path d="M10.1667 1.83333L6.00004 6L1.83337 1.83333" stroke="#000248"></path>
+                                    <path d="M10.1667 1.83333L6.00004 6L1.83337 1.83333" stroke="currentColor"></path>
                                 </svg>
                             )}
                         </Link>
@@ -119,4 +114,3 @@ const Header = () => {
 };
 
 export default Header;
-

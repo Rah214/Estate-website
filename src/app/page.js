@@ -1,12 +1,13 @@
 import Hero from "@/components/Hero";
-// import Home from "@/components/Hero";
+import Landlords from "@/components/Landlords";
+
 
 export default function Home() {
   return (
     <>
    <Hero/>
+   <Landlords/>
 
-   {/* <Home/> */}
     </>
   );
 }
