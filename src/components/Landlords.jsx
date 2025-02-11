@@ -8,7 +8,7 @@ const Landlords = () => {
 
     return (
         <>
-            <section className='max-w-[1440px] w-full font-sans flex flex-col md:flex-row items-center justify-center bg-white mx-auto py-[70px] xl:py-[100px] px-[30px] xl:px-[160px]'>
+            <section className='max-w-[1440px] w-full font-sans flex flex-col md:flex-row items-center justify-center md:justify-between bg-white mx-auto py-[70px] xl:py-[100px] px-[30px] xl:px-[160px]'>
 
                 {/* Image Container */}
                 <div className="relative flex justify-center mb-7 md:mb-0 items-center w-full max-w-[544px]">
