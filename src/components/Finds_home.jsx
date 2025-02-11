@@ -1,58 +1,61 @@
 'use client';
 
 import Image from 'next/image';
-// import { Image } from 'lucide-react';
+
+const realEstateStats = [
+    {
+        id: 1,
+        icon: '/houseicon.png',
+        value: '7.4%',
+        label: 'Property Return Rate'
+    },
+    {
+        id: 2,
+        icon: '/houseicon1.png',
+        value: '3,856',
+        label: 'Property in Sell'
+    },
+    {
+        id: 3,
+        icon: '/houseicon2.png',
+        value: '2,540',
+        label: 'Daily Transactions'
+    }
+];
 
 export default function RealEstateSection() {
     return (
-        <section className=" p-6 md:p-12 rounded-lg shadow-lg font-sans">
-            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center py-[20px] md:pl-[64px] px-7 bg-[#F7F7FD] ">
+        <section className="p-6 md:p-[30px] rounded-lg shadow-lg font-sans">
+            <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center py-[20px] md:pl-[64px] px-7 bg-[#F7F7FD]">
                 {/* Text Content */}
-                <div>
-
-                    <div className='max-w-[379px]'>
-                        <h2 className="md:text-[35px] text-[32px] leading-[56px] font-bold text-[#100A55]">
+                <div className="flex-1">
+                    <div className='md:max-w-[379px] max-w-[450px] flex flex-col md:items-start m-auto md:m-0 items-center'>
+                        <h2 className="md:text-[35px] md:text-left text-center text-[32px] md:leading-[56px] leading-[40px] font-bold text-[#100A55]">
                             The new way to find your new home
                         </h2>
-
-
-                        <div className='max-w-[276px]'>
-                            <p className="mt-4 text-[#6C727F] text-[16px] leading-[25.6px]">
+                        <div className='md:max-w-[276px] max-w-[350px] flex items-center justify-center'>
+                            <p className="mt-4 text-[#6C727F] md:text-left text-center text-[16px] leading-[25.6px]">
                                 Find your dream place to live in with more than 10k+ properties listed.
                             </p>
-
                         </div>
                     </div>
-                    <div className="mt-[40px] flex   gap-[32px]">
-                        {/* Stats Items */}
-                        <div className="text-center flex gap-[5px] flex-col">
-                            <div className="w-16 h-16 mx-auto flex items-center justify-center bg-white shadow-md rounded-full">
-                                {/* <span className="text-indigo-600 text-2xl">💹</span> */}
-                                <Image src={'/houseicon.png'} alt='house icons' height={64} width={64}></Image>
+                    {/* Stats Items */}
+                    <div className="mt-[40px] flex sm:flex-row flex-col gap-[32px]">
+                        {realEstateStats.map((stat) => (
+                            <div key={stat.id} className="text-center max-w-[200px] md:max-w-auto flex items-center md:flex-col md:gap-[5px] gap-[16px]">
+                                <div className="flex items-center justify-center bg-white shadow-md rounded-full">
+                                    <Image src={stat.icon} alt="house icon" height={64} width={64} />
+                                </div>
+                                <div>
+                                    <p className="text-[24px] md:text-center text-left leading-[36px] font-bold text-[#000929]">{stat.value}</p>
+                                    <p className="text-[#6C727F] md:text-center text-left text-[12px] leading-[16.2px]">{stat.label}</p>
+                                </div>
                             </div>
-                            <p className="text-2xl font-bold text-gray-900 mt-2">7.4%</p>
-                            <p className="text-gray-600 text-sm">Property Return Rate</p>
-                        </div>
-                        <div className="text-center flex gap-[5px] flex-col">
-                            <div className="w-16 h-16 mx-auto flex items-center justify-center bg-white shadow-md rounded-full">
-                                {/* <span className="text-indigo-600 text-2xl">🔍</span> */}
-                                <Image src={'/houseicon1.png'} alt='house icons' height={64} width={64}></Image>
-                            </div>
-                            <p className="text-2xl font-bold text-gray-900 mt-2">3,856</p>
-                            <p className="text-gray-600 text-sm">Property in Sell & Rent</p>
-                        </div>
-                        <div className="text-center flex gap-[5px] flex-col">
-                            <div className="w-16 h-16 mx-auto flex items-center justify-center bg-white shadow-md rounded-full">
-                                {/* <span className="text-indigo-600 text-2xl">💰</span> */}
-                                <Image src={'/houseicon2.png'} alt='house icons' height={64} width={64}></Image>
-                            </div>
-                            <p className="text-2xl font-bold text-gray-900 mt-2">2,540</p>
-                            <p className="text-gray-600 text-sm">Daily Transactions</p>
-                        </div>
+                        ))}
                     </div>
                 </div>
                 {/* Image Content */}
-                <div className="flex justify-center w-full">
+                <div className="flex-1 flex justify-center w-full">
                     <Image
                         src="/house.png"
                         alt="House Illustration"

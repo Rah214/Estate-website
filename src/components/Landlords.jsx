@@ -8,7 +8,7 @@ const Landlords = () => {
 
     return (
         <>
-            <section className='max-w-[1440px] w-full font-sans flex flex-col md:flex-row items-center justify-center md:justify-between bg-white mx-auto py-[70px] xl:py-[100px] px-[30px] xl:px-[160px]'>
+            <section className='max-w-[1440px] md:gap-[132px] w-full font-sans flex flex-col md:flex-row items-center justify-center md:justify-between bg-white mx-auto py-[70px] xl:py-[100px] px-[30px] xl:px-[160px]'>
 
                 {/* Image Container */}
                 <div className="relative flex justify-center mb-7 md:mb-0 items-center w-full max-w-[544px]">
@@ -16,7 +16,7 @@ const Landlords = () => {
                         src="/mask.png"
                         height={600}
                         width={544}
-                        className="w-full min-w-[327px] h-auto"
+                        className="w-full h-auto"
                         alt="Mask Image"
                     />
 
@@ -36,7 +36,7 @@ const Landlords = () => {
                 </div>
 
                 {/* Content Container */}
-                <div className='w-full max-w-[555px]  mt-[80px] md:mt-0 md:ml-[40px] flex flex-col gap-8 items-center md:items-start'>
+                <div className='w-full max-w-[444px] lg:min-h-[400px] md:min-h-[200px] mt-[80px] md:mt-0 flex flex-col lg:gap-8 gap-6 items-center md:items-start'>
 
                     {/* Tab Buttons */}
                     <div className="flex items-center justify-center w-full max-w-[327px]">
@@ -64,7 +64,7 @@ const Landlords = () => {
 
                     {/* Heading */}
                     <div className='w-full'>
-                        <h1 className='font-bold max-w-[100%] md:text-[36px] text-[28px] text-center md:text-left xl:leading-[56px] text-[#000929]'>
+                        <h1 className='font-bold max-w-[100%] lg:text-[36px] text-[26px] text-center md:text-left xl:leading-[56px] text-[#000929]'>
                             We make it easy for tenants and landlords.
                         </h1>
                     </div>
