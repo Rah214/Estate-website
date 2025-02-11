@@ -14,7 +14,7 @@ export default function SearchBar() {
         <div className="max-w-[783px] md:flex flex-col  hidden  font-sans">
             <div className="bg-white shadow-md  rounded-r-[8px] rounded-b-[8px] p-4 flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
 
-                <div className='flex gap-[100px]'>
+                <div className='flex lg:gap-[100px] md:gap-[60px] gap-[40px]  '>
 
 
                     <div className="flex flex-col">
@@ -34,7 +34,7 @@ export default function SearchBar() {
                     </div>
 
 
-                    <div className='flex gap-[80px]'>
+                    <div className='flex lg:gap-[100px] md:gap-[80px] gap-[30px]'>
 
 
                         <div className="flex  flex-col">

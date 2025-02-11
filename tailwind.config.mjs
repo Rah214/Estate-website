@@ -7,6 +7,22 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'sm': '640px',
+        // => @media (min-width: 640px) { ... }
+  
+        'md': '841px',
+        // => @media (min-width: 768px) { ... }
+  
+        'lg': '1100px',
+        // => @media (min-width: 1024px) { ... }
+  
+        'xl': '1280px',
+        // => @media (min-width: 1280px) { ... }
+  
+        '2xl': '1348px',
+        // => @media (min-width: 1536px) { ... }
+      },
       colors: {
         purple: {
           500: "#8B5CF6",
