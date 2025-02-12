@@ -40,10 +40,13 @@ const Testimonials = () => {
       </div>
 
       <div className="flex justify-center items-center pt-[56px]">
-        <Image src={'/frame.png'} height={72} width={256} alt="Frame" />
+        <Image src={'/Frame.png'} height={72} width={256} alt="Frame" />
       </div>
     </section>
   );
 };
 
 export default Testimonials;
+
+
+// Create properties section which have cards which tells about Prices and furniture and also create testimonials section which have information about property managers, landlords, and tenants.
