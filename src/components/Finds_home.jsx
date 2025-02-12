@@ -25,8 +25,8 @@ const realEstateStats = [
 
 export default function RealEstateSection() {
     return (
-        <section className="p-6 md:p-[30px] rounded-lg shadow-lg font-sans">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center py-[20px] md:pl-[64px] px-7 bg-[#F7F7FD]">
+        <section className="p-6 md:p-[30px] rounded-lg font-sans">
+            <div className="max-w-[1120px] mx-auto flex flex-col md:flex-row gap-10 items-center py-[20px] md:pl-[64px] px-7 bg-[#F7F7FD] border-[2px] border-[#E0DEF7] rounded-[8px] ">
                 {/* Text Content */}
                 <div className="flex-1">
                     <div className='md:max-w-[379px] max-w-[450px] flex flex-col md:items-start m-auto md:m-0 items-center'>
