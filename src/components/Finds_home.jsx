@@ -40,7 +40,7 @@ export default function RealEstateSection() {
                         </div>
                     </div>
                     {/* Stats Items */}
-                    <div className="mt-[40px] flex sm:flex-row flex-col gap-[32px]">
+                    <div className="mt-[40px] flex sm:flex-row flex-col md:justify-stretch gap-8 ">
                         {realEstateStats.map((stat) => (
                             <div key={stat.id} className="text-center max-w-[200px] md:max-w-auto flex items-center md:flex-col md:gap-[5px] gap-[16px]">
                                 <div className="flex items-center justify-center bg-white shadow-md rounded-full">
