@@ -24,7 +24,7 @@ const Landlords = () => {
                     <div className="absolute inset-x-0 bottom-[-30px] mx-6 flex items-center justify-center">
                         <div className="flex items-center w-full max-w-[411px] bg-white shadow-md rounded-[8px] border border-gray-200 p-2 md:p-4 relative">
                             <div className="absolute -top-4 right-6 flex items-center justify-center w-12 h-12">
-                                <Image src={"/icon.png"} width={32} height={32} alt="Home Icon" />
+                                <Image src={"/Icon.png"} width={32} height={32} alt="Home Icon" />
                             </div>
 
                             <div className="pl-6 pr-12">

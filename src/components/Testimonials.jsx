@@ -48,5 +48,3 @@ const Testimonials = () => {
 
 export default Testimonials;
 
-
-// Create properties section which have cards which tells about Prices and furniture and also create testimonials section which have information about property managers, landlords, and tenants.
