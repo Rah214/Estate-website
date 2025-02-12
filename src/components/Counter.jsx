@@ -9,7 +9,7 @@ export default function Counter() {
     useEffect(() => {
       let start = 0;
       const duration = 1000; // Counter duration in milliseconds
-      const increment = Math.ceil(end / (duration / 50));
+      const increment = Math.ceil(end / (duration / 30));
 
       const timer = setInterval(() => {
         start += increment;

@@ -71,7 +71,11 @@ const properties = [
 
 const Property = () => {
     return (
-        <section className='max-w-[1440px] w-full lg:px-[160px] md:py-[80px] py-[40px] px-[24px] font-sans m-auto'>
+        <section className=' w-full lg:px-[160px] md:py-[80px] py-[40px] px-[24px] font-sans m-auto' style={{ background: 'linear-gradient(to bottom, white, #F0EFFB)' }}>
+<div className='max-w-[1440px] m-auto'>
+
+
+
             <div className='flex lg:justify-between gap-6 justify-center flex-wrap items-center'>
                 <div className='text-center'>
                     <h1 className='font-bold text-[40px] leading-[56px] text-[#000929]'>Based on your location</h1>
@@ -121,9 +125,10 @@ const Property = () => {
                     Browse more Properties
                 </button>
             </div>
+
+            </div>
         </section>
     );
 };
 
 export default Property;
-
