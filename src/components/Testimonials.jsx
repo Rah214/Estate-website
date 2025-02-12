@@ -13,10 +13,10 @@ const testimonialsData = [
 const Testimonials = () => {
   return (
     <section
-      className="w-full m-auto md:pt-[64px] pt-[32px] md:pb-[100px] pb-[50px] font-sans px-[24px]"
+      className="w-full  md:pt-[64px] pt-[32px] md:pb-[100px] pb-[50px] font-sans px-[24px]"
       style={{ background: 'linear-gradient(to top, white, #F0EFFB)' }}
     >
-      <div className="flex max-w-[1440px] flex-col gap-[64px] justify-center items-center">
+      <div className="flex m-auto max-w-[1440px] flex-col md:gap-[64px] gap-[38px] justify-center items-center">
         <div className="flex flex-col gap-4 justify-center text-center items-center">
           <h1 className="text-[#000929] font-bold text-[40px] leading-[56px]">
             Testimonials
