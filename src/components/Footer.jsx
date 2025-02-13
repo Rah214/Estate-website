@@ -66,33 +66,33 @@ const socialLinks = [
 const Footer = () => {
     return (
         <section className='w-full m-auto font-sans'>
-            <div className='max-w-[1140px] lg:justify-stretch justify-between px-6 md:py-[80px] py-[40px] m-auto gap-5 flex-wrap flex'>
+            {/* Logo and Content Container */}
+            <div className='max-w-[1140px] px-6  md:py-[80px] py-[40px] m-auto flex flex-col lg:flex-row gap-[40px] lg:gap-[150px]'>
+                {/* Logo */}
                 <div className='w-[151px] h-[40px]'>
                     <Image src={'/logo.png'} height={40} width={151} alt='logo' />
                 </div>
 
-                <div className='flex flex-wrap mt-[38px] sm:mt-[0px] lg:gap-[150px] md:gap-[100px] sm:gap-[50px] gap-[30px]'>
-                    {[0, 2, 4].map((startIndex) => (
-                        <div key={startIndex} className='flex flex-col gap-[48px]'>
-                            {footerData.slice(startIndex, startIndex + 2).map((section) => (
-                                <div key={section.title} className='flex flex-col '>
-                                    <h1 className='font-bold leading-[24px] mb-4 text-[#000929]'>{section.title}</h1>
-                                    {section.links.map((link) => (
-                                        <Link href={link.href} key={link.href} className='text-[#000929] opacity-[70%] font-normal leading-[38px] hover:underline'>
-                                            {link.name}
-                                        </Link>
-                                    ))}
-                                </div>
+                {/* Content Grid */}
+                <div className='flex-1 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
+                    {footerData.map((section) => (
+                        <div key={section.title} className='flex flex-col '>
+                            <h1 className='font-bold leading-[24px] text-[#000929] mb-4'>{section.title}</h1>
+                            {section.links.map((link) => (
+                                <Link href={link.href} key={link.href} className='text-[#000929]  opacity-[70%] font-normal leading-[38px] hover:underline'>
+                                    {link.name}
+                                </Link>
                             ))}
                         </div>
                     ))}
                 </div>
             </div>
 
+            {/* Footer Bottom Section */}
             <div className='border-t-[#E8E6F9] border-[1.5px] w-full'>
-                <div className='max-w-[1140px] m-auto py-8 px-6 flex md:flex-row flex-col md:gap-0 gap-[24px] items-center justify-between'>
+                <div className='max-w-[1140px] m-auto py-8 px-6  flex flex-col md:flex-row gap-4 items-center justify-between'>
                     <h1 className='text-[#000929] opacity-[50%] font-normal leading-[25.6px]'>&copy; 2021 Estatery, All rights reserved</h1>
-                    <div className='flex gap-4'>
+                    <div className='flex gap-[40px]'>
                         {socialLinks.map((social, index) => (
                             <Link href={social.href} key={index} target='_blank' rel='noopener noreferrer' className='text-[#000929] opacity-[50%] text-xl hover:text-[#000929] hover:opacity-100'>
                                 {social.icon}
