@@ -28,7 +28,7 @@ const Hero = () => {
             baths: 2,
             area: "6x8 m²"
         },
-        
+
     ];
 
     return (
@@ -36,16 +36,16 @@ const Hero = () => {
             {/* Background image for the right half */}
             <div className="md:absolute inset-y-0 right-0 w-1/2 bg-cover bg-center" style={{ backgroundImage: "url('/bg.png')" }}></div>
 
-            <section className='max-w-[1440px] w-full m-auto px-5 md:px-[160px] font-sans relative z-10'>
+            <section className='max-w-[1440px] w-full m-auto px-5 lg:pl-[160px]  font-sans relative z-10'>
                 <div className='flex md:gap-[32px] justify-center text-center lg:text-left lg:justify-normal '>
                     <div className='max-w-[544px]'>
                         <div className='flex gap-[40px] md:gap-[32px] flex-col'>
                             <p className='font-bold leading-[44px] min-w-[300px]  md:leading-[70.4px] md:text-[64px] text-[40px] text-[#000929]'>Buy, rent, or sell your property easily</p>
                             <p className='font-normal leading-[32px] min-w-[300px] text-[20px] text-[#000929]'>A great platform to buy, sell, or even rent your properties without any commisions.</p>
 
-                              
+
                             <Counter />
-                          
+
 
                         </div>
                     </div>
@@ -81,7 +81,7 @@ const Hero = () => {
                 </div>
                 <div className='mt-[58px]'>
 
-                   
+
                     <Motion />
                     <SearchBox />
                     <SearchBar />

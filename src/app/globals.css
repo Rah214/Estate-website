@@ -4,3 +4,30 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Custom Pagination Styles */
+
+/* .swiper-pagination {
+    position: absolute;
+    bottom: 10px; 
+    left: 50%; 
+    top:300px;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    
+    gap: 4px; 
+}
+
+.swiper-pagination-bullet {
+    width: 12px; 
+    height: 12px; 
+    background-color: #ccc; 
+    opacity: 1; 
+    border-radius: 50%; 
+    transition: background-color 0.3s ease; 
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #7065F0; 
+} */

@@ -1,4 +1,12 @@
-import Image from 'next/image';
+"use client";
+
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
+import { FreeMode } from "swiper/modules";
 
 const properties = [
     {
@@ -9,8 +17,8 @@ const properties = [
         address: "2699 Green Valley, Highland Lake, FL",
         imgSrc: "/card.png",
         beds: "3 Beds",
-        baths: "2 Bathrooms",
-        size: "5x7 m²"
+        baths: "2 Baths",
+        size: "5x7 m²",
     },
     {
         id: 2,
@@ -20,8 +28,8 @@ const properties = [
         address: "2821 Lake Sevilla, Palm Harbor, TX",
         imgSrc: "/card2.png",
         beds: "4 Beds",
-        baths: "2 Bathrooms",
-        size: "6x7.5 m²"
+        baths: "2 Baths",
+        size: "6x7.5 m²",
     },
     {
         id: 3,
@@ -31,8 +39,8 @@ const properties = [
         address: "909 Woodland St, Michigan, IN",
         imgSrc: "/card3.png",
         beds: "4 Beds",
-        baths: "3 Bathrooms",
-        size: "8x10 m²"
+        baths: "3 Baths",
+        size: "8x10 m²",
     },
     {
         id: 4,
@@ -42,8 +50,8 @@ const properties = [
         address: "210 US Highway, Highland Lake, FL",
         imgSrc: "/card4.png",
         beds: "4 Beds",
-        baths: "2 Bathrooms",
-        size: "6x8 m²"
+        baths: "2 Baths",
+        size: "6x8 m²",
     },
     {
         id: 5,
@@ -53,8 +61,8 @@ const properties = [
         address: "243 Curlew Road, Palm Harbor, TX",
         imgSrc: "/card5.png",
         beds: "2 Beds",
-        baths: "1 Bathroom",
-        size: "5x7.5 m²"
+        baths: "1 Baths",
+        size: "5x7.5 m²",
     },
     {
         id: 6,
@@ -64,77 +72,96 @@ const properties = [
         address: "103 Lake Shores, Michigan, IN",
         imgSrc: "/card6.png",
         beds: "3 Beds",
-        baths: "1 Bathroom",
-        size: "5x7 m²"
-    }
+        baths: "1 Baths",
+        size: "5x7 m²",
+    },
 ];
 
 const Property = () => {
     return (
-        <>
-        <div className='w-full ' style={{ background: 'linear-gradient(to bottom, white, #F0EFFB)' }} >
-
-        
-        <section className=' max-w-[1440px] lg:px-[160px] md:py-[80px] py-[40px] px-[24px] font-sans m-auto' >
-            <div className=' m-auto'>
-
-
-
-                <div className='flex lg:justify-between gap-6 justify-center flex-wrap items-center'>
-                    <div className='text-center'>
-                        <h1 className='font-bold text-[40px] leading-[56px] text-[#000929]'>Based on your location</h1>
-                        <p className='mt-[16px] font-normal leading-[25.6px] text-[#000929] opacity-[70%]'>Some of our picked property near your location.</p>
-                    </div>
-                    <div className='lg:block hidden'>
-                        <button className="bg-[#7065F0] text-white lg:text-[16px] text-[12px] lg:leading-[24px] leading-[12px] font-bold lg:px-8 lg:py-4 px-6 py-3 rounded-[8px] hover:bg-purple-600 transition">
-                            Browse more Properties
-                        </button>
-                    </div>
+        <div className="w-full bg-gradient-to-b from-white to-[#F0EFFB]">
+            <section className="max-w-[1440px] xl:px-[160px]  md:py-[80px] py-[40px] px-[24px] font-sans m-auto">
+                <div className="text-center">
+                    <h1 className="font-bold text-[40px] leading-[56px] text-[#000929]">
+                        Based on your location
+                    </h1>
+                    <p className="mt-[16px] text-[#000929] opacity-70">
+                        Some of our picked properties near your location.
+                    </p>
                 </div>
 
-                <div className='flex gap-[24px] md:justify-around justify-center lg:justify-between flex-wrap'>
-                    {properties.map(property => (
-                        <div key={property.id} className="max-w-[350px] mt-[48px] max-h-[424px] bg-white rounded-2xl shadow-lg overflow-hidden">
-                            <img className="w-full h-48 object-cover" src={property.imgSrc} alt={property.title} />
-                            <div className="flex flex-col gap-2 py-[32px] px-[24px] relative">
-                                <h2 className="text-[24px] font-extrabold leading-[36px] text-[#7065F0]">{property.price}<span className="text-[#000929] opacity-[50%] leading-[24px] text-[16px]"> {property.perMonth}</span></h2>
-                                <h3 className="text-[24px] leading-[36px] font-bold text-[#000929]">{property.title}</h3>
-                                <p className="text-[#000929] opacity-[50%] leading-[24px] text-[16px]">{property.address}</p>
+                {/* Swiper for Mobile */}
+                <div className="lg:hidden mt-[48px]">
+                    <Swiper
+                        modules={[FreeMode]}
+                        spaceBetween={20}
+                        slidesPerView={1.2}
+                        centeredSlides={true}
+                        freeMode={true}
+                        breakpoints={{
+                            640: { slidesPerView: 1.5, spaceBetween: 20 },
+                            768: { slidesPerView: 2, spaceBetween: 30 },
+                        }}
+                    >
+                        {properties.map((property) => (
+                            <SwiperSlide key={property.id}>
+                                <PropertyCard property={property} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
 
-                                <div className='border-[1.5px] max-w-[48px] max-h-[48px] rounded-[100%] border-[#E8E6F9] py-[16px] px-[15px] absolute left-[250px]'>
-                                    <Image src={'/heart.png'} width={24} height={24} alt='Heart' />
-                                </div>
-
-                                <div className="flex items-center justify-between mt-4 text-gray-600 text-sm">
-                                    <div className="flex items-center">
-                                        <Image src={'/icon1.png'} width={20} height={20} alt='Bed' />
-                                        <span className="ml-1 text-[14px] leading-[19.6px] text-[#000929] opacity-[70%]">{property.beds}</span>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <Image src={'/icon2.png'} width={20} height={20} alt='Bath' />
-                                        <span className="ml-1 text-[14px] leading-[19.6px] text-[#000929] opacity-[70%]">{property.baths}</span>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <Image src={'/icon3.png'} width={20} height={20} alt='Size' />
-                                        <span className="ml-1 text-[14px] leading-[19.6px] text-[#000929] opacity-[70%]">{property.size}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                {/* Grid Layout for Large Screens */}
+                <div className="hidden lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-[48px]">
+                    {properties.map((property) => (
+                        <PropertyCard key={property.id} property={property} />
                     ))}
                 </div>
-
-                <div className='lg:hidden mt-[48px] flex justify-center'>
-                    <button className="bg-[#7065F0] text-white text-[12px] leading-[12px] font-bold px-6 py-3 rounded-[8px] hover:bg-purple-600 transition">
-                        Browse more Properties
-                    </button>
-                </div>
-
-            </div>
-        </section>
+            </section>
         </div>
-        </>
     );
 };
 
+const PropertyCard = ({ property }) => {
+    return (
+        <div className="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+            <img className="w-full h-56 object-cover" src={property.imgSrc} alt={property.title} />
+            <div className="p-6 relative">
+                <h2 className="text-xl font-extrabold text-[#7065F0]">
+                    {property.price}
+                    <span className="text-[#000929] opacity-50 text-base"> {property.perMonth}</span>
+                </h2>
+                <h3 className="text-lg font-bold mt-2 text-[#000929] truncate">{property.title}</h3>
+                <p className="text-[#000929] mt-2 opacity-70 text-sm truncate">{property.address}</p>
+                
+                {/* Favorite Icon */}
+                <div className="absolute top-4 right-4 w-12 h-12 border-2 border-[#E8E6F9] rounded-full flex items-center justify-center">
+                    <Image src="/heart.png" width={24} height={24} alt="Heart" />
+                </div>
+
+                {/* Property Info - Hide text labels on small screens */}
+                <div className="flex justify-between mt-4 text-gray-600 text-sm">
+                    <div className="flex items-center gap-1">
+                        <Image src="/icon1.png" width={18} height={18} alt="Bed" />
+                        <span>{property.beds.split(" ")[0]}</span> 
+                        <span className="hidden sm:inline">{property.beds.split(" ")[1]}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                        <Image src="/icon2.png" width={18} height={18} alt="Bath" />
+                        <span>{property.baths.split(" ")[0]}</span> 
+                        <span className="hidden sm:inline">{property.baths.split(" ")[1]}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                        <Image src="/icon3.png" width={18} height={18} alt="Size" />
+                        <span>{property.size}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+
 export default Property;
+
+// When screen size is small then removes beds,baths from the card
