@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
     { href: "/rent", label: "Rent" },
@@ -82,35 +83,44 @@ const Header = () => {
                 </button>
             </div>
 
-            {/* Mobile Menu */}
-            {menuOpen && (
-                <div className="md:hidden flex flex-col items-start mt-4 gap-4 bg-[#F7F7FD] w-screen h-screen">
-                    {navLinks.map(({ href, label, submenu }) => (
-                        <Link key={href} href={href} onClick={() => setMenuOpen(false)} className="flex items-center gap-2 hover:text-[#7065F0] pl-[10px] transition-colors duration-200">
-                            {label}
-                            {submenu && (
-                                <svg
-                                    className="w-4 h-4 flex-shrink-0 transition-colors duration-200 hover:stroke-[#7065F0]"
-                                    viewBox="0 0 12 7"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path d="M10.1667 1.83333L6.00004 6L1.83337 1.83333" stroke="currentColor"></path>
-                                </svg>
-                            )}
-                        </Link>
-                    ))}
-                    {authButtons.map(({ href, label, style }) => (
-                        <Link key={href} href={href} onClick={() => setMenuOpen(false)}>
-                            <button className={`px-6 py-3 flex items-start justify-start leading-6 font-bold rounded-lg w-full ${style} hover:opacity-80 transition-opacity duration-200`}>
+            {/* Mobile Menu with Animation */}
+            <AnimatePresence>
+                {menuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="md:hidden flex flex-col items-start mt-4 gap-4 bg-[#F7F7FD] w-screen h-screen p-4"
+                    >
+                        {navLinks.map(({ href, label, submenu }) => (
+                            <Link key={href} href={href} onClick={() => setMenuOpen(false)} className="flex items-center gap-2 hover:text-[#7065F0] pl-[10px] transition-colors duration-200">
                                 {label}
-                            </button>
-                        </Link>
-                    ))}
-                </div>
-            )}
+                                {submenu && (
+                                    <svg
+                                        className="w-4 h-4 flex-shrink-0 transition-colors duration-200 hover:stroke-[#7065F0]"
+                                        viewBox="0 0 12 7"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M10.1667 1.83333L6.00004 6L1.83337 1.83333" stroke="currentColor"></path>
+                                    </svg>
+                                )}
+                            </Link>
+                        ))}
+                        {authButtons.map(({ href, label, style }) => (
+                            <Link key={href} href={href} onClick={() => setMenuOpen(false)}>
+                                <button className={`px-6 py-3 flex items-start justify-start leading-6 font-bold rounded-lg w-full ${style} hover:opacity-80 transition-opacity duration-200`}>
+                                    {label}
+                                </button>
+                            </Link>
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </header>
     );
 };
 
 export default Header;
+

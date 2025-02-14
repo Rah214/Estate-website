@@ -7,18 +7,17 @@ const Motion = () => {
     const [activeTab, setActiveTab] = useState('Rent');
 
     const tabs = [
-        { name: 'Rent', href: '/rent' },
-        { name: 'Buy', href: '/buy' },
-        { name: 'Sell', href: '/sell' }
+        { name: 'Rent' },
+        { name: 'Buy' },
+        { name: 'Sell' }
     ];
 
     return (
         <>
             <div className="flex justify-between m-auto md:m-0 w-full max-w-[297px] rounded-t-[8px] bg-white py-[15px] px-[25px] sm:w-auto">
                 {tabs.map((tab) => (
-                    <Link
+                    <div
                         key={tab.name}
-                        href={tab.href}
                         className="relative px-4 cursor-pointer text-lg font-medium text-gray-700"
                         onClick={() => setActiveTab(tab.name)}
                     >
@@ -29,7 +28,7 @@ const Motion = () => {
                                 layoutId="underline"
                             />
                         )}
-                    </Link>
+                    </div>
                 ))}
             </div>
         </>
