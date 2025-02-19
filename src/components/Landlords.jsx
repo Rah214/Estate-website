@@ -71,16 +71,32 @@ const Landlords = () => {
 
                     {/* Description */}
                     <div className='w-full'>
-                        <p className='text-[#6C727F] text-center md:text-left lg:leading-[25.6px] font-normal'>
+                   
+                      {activeTab === "tenants" ? ( <p className='text-[#6C727F] text-center md:text-left lg:leading-[25.6px] font-normal'>
+                        
                             Whether it’s selling your current home, getting financing, or buying a new home, we make it easy and efficient. The best part? you’ll save a bunch of money and time with our services.
                         </p>
+                      ):(
+                        
+                        <p className='text-[#6C727F] text-center md:text-left lg:leading-[25.6px] font-normal'> <span className='text-black font-bold'> Welcome to Landlords</span> <br/>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro vero suscipit consequatur.
+                        </p>
+                      )}
                     </div>
+                    
 
                     {/* Button */}
                     <div className='text-center md:text-left w-full'>
+                    {activeTab==="tenants" ? (
                         <button className="bg-[#7065F0] w-full md:w-auto text-white text-[14px] lg:text-[16px] font-bold px-6 py-3 lg:px-[38px] lg:py-[12px] rounded-md hover:bg-purple-600 transition">
                             See more
                         </button>
+                        ):(
+                             <button className="bg-[#7065F0] w-full md:w-auto text-white text-[14px] lg:text-[16px] font-bold px-6 py-3 lg:px-[38px] lg:py-[12px] rounded-md hover:bg-purple-600 transition">
+                            Learn more
+                        </button>
+                        
+                    )}
                     </div>
                 </div>
             </section>
