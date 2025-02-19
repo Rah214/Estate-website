@@ -92,7 +92,7 @@ const Footer = () => {
                 <Link
                   href={link.href}
                   key={link.href}
-                  className="text-[#000929]  opacity-[70%] font-normal leading-[38px] hover:underline"
+                  className="text-[#000929] max-w-fit opacity-[70%] font-normal leading-[38px] hover:underline"
                 >
                   {link.name}
                 </Link>
